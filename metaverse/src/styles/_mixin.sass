@@ -1,0 +1,60 @@
+@use 'sass:math'
+@function calcWidth1440($n)
+  @return $n*math.div(100vw,1440)
+@function calcWidth1200($n)
+  @return $n*math.div(100vw,1200)
+@function calcWidth992($n)
+  @return $n*math.div(100vw,992)
+@function calcWidth768($n)
+  @return $n*math.div(100vw,768)
+@function calcWidth480($n)
+  @return $n*math.div(100vw,480)
+@function calcWidth380($n)
+  @return $n*math.div(100vw,390)
+
+
+$accent-color-blackBlue: #1B2A41
+$accent-color-grey: rgba(27, 42, 65, 0.6)
+$accent-color-lightBlue: #034DB5
+
+
+@mixin activeTitle($width,$height)
+  background: $accent-color-blackBlue
+  width: $width
+  height: $height
+  display: flex 
+  justify-content: center
+  align-items: center
+
+
+
+
+// @mixin customBtn($paddingVertical,$fz,$maxWidth,$transform,$color:#3D4043,$backGround: #FFF)
+//   border: 1px solid #262626
+//   width: 100%
+//   max-width: $maxWidth
+//   padding: $paddingVertical
+//   text-transform: $transform
+//   font-size: $fz
+//   font-family: "Montserrat Light", sans-serif
+//   text-align: center
+//   color: $color
+//   background-color: $backGround
+//   cursor: pointer
+//   transition: all 0.4s ease-in-out
+//   &:hover
+//     color: $backGround
+//     background: $color
+//   &:active
+//     scale: 0.98
+
+// @mixin customInput($fz, $paddingVertical, $paddingHorizontal, $maxWidth)
+//   font-family: "Montserrat Light",sans-serif
+//   font-size: $fz
+//   padding: $paddingVertical $paddingHorizontal
+//   width: 100%
+//   max-width: $maxWidth
+//   outline: none
+//   border: 1px solid black
+//   border-radius: 0 !important
+
