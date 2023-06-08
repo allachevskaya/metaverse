@@ -1,4 +1,4 @@
-import styles from './Navigation.module.sass'
+                    import styles from './Navigation.module.sass'
 import { v4 as uuidv4 } from 'uuid';
 import clsx from 'clsx';
 

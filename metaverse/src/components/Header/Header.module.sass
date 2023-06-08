@@ -1,6 +1,6 @@
 @import '../../styles/mixin'
 
-.mainHeader
+.header
     width: 100%
     position: relative
     &Container
@@ -41,5 +41,59 @@
                 img
                     width: 100%
                     height: 100%
-                &:hover 
+                &:hover
                     transform: translate(0,-5px)
+@media (max-width:1440px)
+    .header
+        &Container
+            width: calcWidth1440(1440)
+            padding: 0 calcWidth1440(20)
+            &Logo
+                width: calcWidth1440(200)
+                padding: calcWidth1440(8) 0
+            &Icons
+                grid-template-columns: repeat(3,calcWidth1440(30))
+                height: calcWidth1440(30)
+                gap: calcWidth1440(26)
+
+@media (max-width:768px)
+    .header
+        &Container
+            width: 100%
+            padding: 0 calcWidth768(20)
+            &Logo
+                width: calcWidth768(200)
+                padding: calcWidth768(8) 0
+            &Icons
+                grid-template-columns: repeat(3,calcWidth768(30))
+                height: calcWidth768(30)
+                gap: calcWidth768(26)
+
+.headerMob
+    width: 100%
+    position: relative
+    &Container
+        padding: 0 calcWidth480(10)
+        position: absolute
+        z-index: 2
+        border: 1px solid red
+        width: 100%
+        height: calcWidth480(60)
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &Logo
+            width: calcWidth480(180)
+            height: auto
+            margin-top: calcWidth480(10)
+            img
+                width: 100%
+                height: 100%
+        &Icon
+            width: calcWidth480(25) 
+            height: calcWidth480(25)
+            cursor: pointer
+            img
+                width: 100%
+                height: 100%
+

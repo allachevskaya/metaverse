@@ -94,7 +94,7 @@
                         line-height: 0px
                         text-align: center
                         color: #FFFFFF
-                    &:hover 
+                    &:hover
                         transform: translate(0,-5px)
                     &::before
                         display: block
@@ -120,7 +120,7 @@
                     align-items: center
                     position: relative
                     transition: all 0.4s ease-in-out
-                    &:hover 
+                    &:hover
                         transform: translate(0,-5px)
                     p
                         font-family: 'NeueMachina-Ultrabold'
@@ -136,16 +136,269 @@
                         top: 5px
                         left: 5px
                         transform: rotate(180deg)
-                        
+
                     &::after
                         display: block
                         content: url("../../../public/images/icons/truangleBlack.svg")
                         position: absolute
                         bottom: 1px
                         right: 5px
-            &Navigation 
-                border: 1px solid green 
+            &Navigation
+                border: 1px solid green
                 height: 100%
                 position: absolute
-                left: 0      
+                left: 0
                 max-width: 50px
+@media (max-width:1440px)
+    .main
+        &Container
+
+            &::before
+                display: block
+                position: absolute
+                bottom: calcWidth1440(-400)
+                left: calcWidth1440(-568)
+                width: calcWidth1440(881)
+                height: calcWidth1440(697)
+                background: #F1A347
+                opacity: 0.8
+                filter: blur(calcWidth1440(228.645))
+                content: ""
+                z-index: 1
+            &::after
+                display: block
+                position: absolute
+                bottom: calcWidth1440(-400)
+                right: calcWidth1440(-568)
+                width: calcWidth1440(1089)
+                height: calcWidth1440(861)
+                background: rgba(255, 114, 190, 0.5)
+                opacity: 0.8
+                filter: blur(calcWidth1440(190.875))
+                content: ""
+                z-index: 1
+        &Content
+            width: calcWidth1440(1440)
+            height: calcWidth1440(535)
+            padding: 0 calcWidth1440(20)
+            &Container
+                gap: calcWidth1440(55)
+                &Title
+                    h1
+                        font-size: calcWidth1440(66)
+                        line-height: calcWidth1440(78)
+                &Btns
+                    height: calcWidth1440(56.5)
+                    gap: calcWidth1440(55)
+                    &Btn
+                        position: relative
+                        border: calcWidth1440(30) solid #40c3c800
+                        padding: 0px calcWidth1440(31)
+                        border-image: url('../../../public/images/icons/folder.svg') 40
+                        p
+                            font-size: calcWidth1440(16)
+
+                        &::before
+                            display: block
+                            content: url("../../../public/images/icons/triangle.svg")
+                            position: absolute
+                            top: calcWidth1440(-25)
+                            left: calcWidth1440(-21)
+                        &::after
+                            display: block
+                            content: url("../../../public/images/icons/triangle.svg")
+                            position: absolute
+                            top: calcWidth1440(-25)
+                            right: calcWidth1440(-21)
+                            transform: rotate(180deg)
+                    &Active
+                        width: calcWidth1440(194)
+                        height: calcWidth1440(68.5)
+
+                        p
+
+                            font-size: calcWidth1440(16)
+
+                        &::before
+                            display: block
+                            content: url("../../../public/images/icons/truangleBlack.svg")
+                            position: absolute
+                            top: calcWidth1440(5)
+                            left: calcWidth1440(5)
+                            transform: rotate(180deg)
+
+                        &::after
+                            display: block
+                            content: url("../../../public/images/icons/truangleBlack.svg")
+                            position: absolute
+                            bottom: calcWidth1440(1)
+                            right: calcWidth1440(5)
+                &Navigation
+                    border: 1px solid green
+                    height: 100%
+                    position: absolute
+                    left: 0
+                    max-width: calcWidth1440(50)
+@media (max-width:768px)
+    .main
+        &Container
+
+            &::before
+                display: block
+                position: absolute
+                bottom: calcWidth768(-100)
+                left: calcWidth768(-568)
+                width: calcWidth768(689)
+                height: calcWidth768(461)
+                background: #F1A347
+                opacity: 0.8
+                filter: blur(calcWidth768(228.645))
+                content: ""
+                z-index: 1
+            &::after
+                display: block
+                position: absolute
+                bottom: calcWidth768(-100)
+                right: calcWidth768(-568)
+                width: calcWidth768(889)
+                height: calcWidth768(561)
+                background: rgba(255, 114, 190, 0.5)
+                opacity: 0.8
+                filter: blur(calcWidth768(228.645))
+                content: ""
+                z-index: 1
+        &Content
+            width: 100%
+            height: calcWidth768(535)
+            padding: 0 calcWidth768(20)
+            &Container
+                gap: calcWidth768(55)
+                &Title
+                    h1
+                        font-size: calcWidth768(56)
+                        line-height: calcWidth768(78)
+                &Btns
+                    height: calcWidth768(56.5)
+                    gap: calcWidth768(55)
+                    &Btn
+                        position: relative
+                        border: calcWidth768(30) solid #40c3c800
+                        padding: 0px calcWidth768(31)
+                        border-image: url('../../../public/images/icons/folder.svg') 40
+                        p
+                            font-size: calcWidth768(16)
+
+                        &::before
+                            display: block
+                            content: url("../../../public/images/icons/triangle.svg")
+                            position: absolute
+                            top: calcWidth768(-25)
+                            left: calcWidth768(-21)
+                        &::after
+                            display: block
+                            content: url("../../../public/images/icons/triangle.svg")
+                            position: absolute
+                            top: calcWidth768(-25)
+                            right: calcWidth768(-21)
+                            transform: rotate(180deg)
+                    &Active
+                        width: calcWidth768(194)
+                        height: calcWidth768(68.5)
+                        p
+
+                            font-size: calcWidth768(16)
+
+                        &::before
+                            display: block
+                            content: url("../../../public/images/icons/truangleBlack.svg")
+                            position: absolute
+                            top: calcWidth768(5)
+                            left: calcWidth768(5)
+                            transform: rotate(180deg)
+
+                        &::after
+                            display: block
+                            content: url("../../../public/images/icons/truangleBlack.svg")
+                            position: absolute
+                            bottom: calcWidth768(1)
+                            right: calcWidth768(5)
+                &Navigation
+                    border: 1px solid green
+                    height: 100%
+                    position: absolute
+                    left: 0
+                    max-width: auto
+
+@media (max-width:480px)
+    .main
+        &Container
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: 85% 0
+
+            &::before, &::after
+                display: none
+
+        &Content
+            width: 100%
+            height: 50%
+            padding: 0 calcWidth480(10)
+            transform: translate(-50%, -61%)
+            &Container
+                gap: calcWidth480(55)
+                &Title
+                    h1
+                        font-size: calcWidth480(68)
+                        line-height: 120%
+                        font-weight: 800
+                        letter-spacing: 0.21em
+                &Btns
+                    height: auto
+                    gap: calcWidth768(55)
+                    flex-direction: column-reverse
+                    &Btn
+                        position: relative
+                        border: calcWidth480(30) solid #40c3c800
+                        padding: 0px calcWidth480(70)
+                        border-image: url('../../../public/images/icons/folder.svg') 40
+                        p
+                            font-size: calcWidth480(19)
+
+                        &::before
+                            display: block
+                            content: url("../../../public/images/icons/triangle.svg")
+                            position: absolute
+                            top: calcWidth480(-25)
+                            left: calcWidth480(-21)
+                        &::after
+                            display: block
+                            content: url("../../../public/images/icons/triangle.svg")
+                            position: absolute
+                            top: calcWidth480(-25)
+                            right: calcWidth480(-21)
+                            transform: rotate(180deg)
+                    &Active
+                        width: calcWidth480(250)
+                        height: calcWidth480(70)
+                        p
+
+                            font-size: calcWidth480(19)
+
+                        &::before
+                            display: block
+                            content: url("../../../public/images/icons/truangleBlack.svg")
+                            position: absolute
+                            top: calcWidth480(5)
+                            left: calcWidth480(5)
+                            transform: rotate(180deg)
+
+                        &::after
+                            display: block
+                            content: url("../../../public/images/icons/truangleBlack.svg")
+                            position: absolute
+                            bottom: calcWidth480(1)
+                            right: calcWidth480(5)
+                &Navigation
+                    display: none
