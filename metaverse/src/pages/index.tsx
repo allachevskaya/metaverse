@@ -14,10 +14,17 @@ export default function Home() {
       <Layout title={'DUSKTOPIA'} description={''} keywords={''} >
 
         <main >
-          <Parallax  speed={-15}>
+        <Main />
+        <Factions/> 
+          
+{/*          
             <Main />
-          </Parallax>
-          <Parallax  speed={15}>
+            <Main />
+
+            <Main />
+            <Main />
+            <Factions/> */}
+         {/* <Parallax  speed={15}>
             <Main />
           </Parallax>
 
@@ -26,9 +33,9 @@ export default function Home() {
           </Parallax>
           <Parallax  speed={15}>
             <Main />
-          </Parallax>
-        
-          {/* <Factions/> */}
+          </Parallax> 
+         */}
+          {/*  */}
 
 
         </main>
