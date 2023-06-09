@@ -20,6 +20,9 @@
             transform: rotate(90deg)
             cursor: pointer
             position: relative
+            transition: all 0.4s ease-in-out
+            &:hover
+                transform: translateY(5px) rotate(90deg)
             &:first-child
                 &::before
                     content: ""
@@ -29,6 +32,8 @@
                 left: -56px
                 display: block
                 content: url('../../../public/images/icons/star.svg')
+               
+                    
             span
                 font-family: "NeueMachina-Ultrabold"
                 font-style: normal
@@ -36,6 +41,8 @@
                 font-size: 16px
                 line-height: 140%
                 color: rgba(255, 255, 255, 0.7)
+                text-shadow: #2c2222 1px 0 10px
+
             &Active
                 span
                     color: #FFFFFF !important

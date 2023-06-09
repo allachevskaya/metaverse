@@ -13,7 +13,7 @@ const Main = () => {
     return (
         <AnimatePresence>
             
-                <section className={styles.main}>
+                <section id="Home" className={styles.main}>
                     <div className={styles.mainContainer}>
                         <Image
                             quality={100}

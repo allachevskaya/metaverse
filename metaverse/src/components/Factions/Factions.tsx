@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import styles from './Factions.module.sass'
 import ListGame from '../ListGame/ListGame'
+import Navigation from '../Navigation/Navigation'
 
 const Factions = () => {
+    const navigationItems = ['Home', 'Factions', 'Roadmap']
     return (
-        <section className={styles.factions}>
+        <section id='Factions' className={styles.factions}>
             <div className={styles.factionsContainer}>
                 <Image
                     quality={100}
@@ -22,6 +24,9 @@ const Factions = () => {
                     </div>
                     <div className={styles.factionsContentContainerList  }>
                         <ListGame/>
+                    </div>
+                    <div className={styles.factionsContentContainerNavigation}>
+                    <Navigation navigationItems={navigationItems} id={1} />
                     </div>
 
                 </div>

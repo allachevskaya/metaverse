@@ -14,8 +14,13 @@ export default function Home() {
       <Layout title={'DUSKTOPIA'} description={''} keywords={''} >
 
         <main >
+      
         <Main />
+        
+        <Parallax  speed={15}>
         <Factions/> 
+        </Parallax> 
+        
           
 {/*          
             <Main />
