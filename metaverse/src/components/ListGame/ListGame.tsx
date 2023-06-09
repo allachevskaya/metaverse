@@ -1,54 +1,58 @@
 import Image from 'next/image'
 import styles from './ListGame.module.sass'
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import clsx from 'clsx'
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
 
+interface ListGameProps {
+    setIdActive: Dispatch<SetStateAction<number>>,
+    arrayList: {
+        name: string;
+        image: string;
+        folder: string;
+        id: string;
+    }[],
+    idActive: number,
+    setOpenAbout: Dispatch<SetStateAction<boolean>>
+    setIsActiveName: Dispatch<SetStateAction<string>>
+}
+
+const ListGame: React.FC<ListGameProps> = ({ arrayList, setIdActive, idActive, setOpenAbout,setIsActiveName }) => {
+
+    // const [idActive, setIdActive] = useState(0)
+
+    // const arrayList = [
+    //     {
+    //         name: 'blighted Badlands',
+    //         image: '/images/factions/frame1.png',
+    //         folder: '/images/factions/folderPink.png',
+    //         id: 'blighted'
+
+    //     },
+    //     {
+    //         name: 'Glacial Frontier',
+    //         image: '/images/factions/frame2.png',
+    //         folder: '/images/factions/folderBlue.png',
+    //         id: 'Glacial'
+
+    //     },
+    //     {
+    //         name: 'Sundered Grove',
+    //         image: '/images/factions/frame3.png',
+    //         folder: '/images/factions/folderPuplpe.png',
+    //         id: 'Sundered'
 
 
-// type list = {
-//     blighted_Badlands: boolean,
-//     Glacial_Frontier: boolean,
-//     Sundered_Grove: boolean,
-//     Sky_Citadel: boolean
-// }
+    //     },
+    //     {
+    //         name: 'blighted Badlands',
+    //         image: '/images/factions/frame4.png',
+    //         folder: '/images/factions/folderGreen.png',
+    //         id: 'Sky Citadel'
 
-const ListGame = () => {
-
-    const [idActive, setIdActive] = useState(0)
-
-    const arrayList = [
-        {
-            name: 'blighted Badlands',
-            image: '/images/factions/frame1.png',
-            folder: '/images/factions/folderPink.png',
-            id: 'blighted'
-
-        },
-        {
-            name: 'Glacial Frontier',
-            image: '/images/factions/frame2.png',
-            folder: '/images/factions/folderBlue.png',
-            id: 'Glacial'
-
-        },
-        {
-            name: 'Sundered Grove',
-            image: '/images/factions/frame3.png',
-            folder: '/images/factions/folderPuplpe.png',
-            id: 'Sundered'
-
-
-        },
-        {
-            name: 'blighted Badlands',
-            image: '/images/factions/frame4.png',
-            folder: '/images/factions/folderGreen.png',
-            id: 'Sky Citadel'
-
-        },
-    ];
+    //     },
+    // ];
 
     //отслеживание скролла
     const handleClickScroll = (id: string) => {
@@ -81,12 +85,17 @@ const ListGame = () => {
                                 height={900}
                                 alt=""
                                 src='/images/factions/frame1.png'
-                                onClick={() => handleClickScroll(item.id)}
+                                
                             />
                             <div className={clsx({
                                 [styles.listGameItemContentImgFolder]: true,
                                 [styles.listGameItemContentImgFolderNotActive]: true && idx !== idActive
-                            })}>
+                            })}
+                            onClick={() => {
+                                // handleClickScroll(item.id)
+                                setOpenAbout(true)
+                                setIsActiveName(item.name)
+                            }}>
 
                                 <Image
                                     quality={100}
@@ -94,11 +103,11 @@ const ListGame = () => {
                                     height={900}
                                     alt=""
                                     src={item.folder}
-                                    onClick={() => handleClickScroll(item.id)}
+                                    
                                 />
 
                                 <div>
-                                    <p onClick={() => handleClickScroll(item.id)}>
+                                    <p >
                                         More
                                     </p>
                                 </div>
