@@ -17,7 +17,7 @@ export default function Home() {
       
         <Main />
         
-        <Parallax  speed={15}>
+        <Parallax  speed={5}>
         <Factions/> 
         </Parallax> 
         
