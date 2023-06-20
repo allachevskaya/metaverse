@@ -15,11 +15,12 @@ interface ListGameProps {
     //проверяет кликнули мы на кнопку подробнее или на картику в меню лист
     //если кликнули открываем дополнительный компонет about
     setOpenAbout: Dispatch<SetStateAction<boolean>>
+    openAbout: boolean
     //получаем info игры о которой пойдет речь 
     setIsActiveGame: Dispatch<SetStateAction<GAME>>
 }
 
-const ListGame: React.FC<ListGameProps> = ({ arrayList, idActive, setOpenAbout, setIsActiveGame, setIdActive }) => {
+const ListGame: React.FC<ListGameProps> = ({ arrayList, idActive, openAbout, setOpenAbout, setIsActiveGame, setIdActive }) => {
 
 
 
@@ -33,24 +34,22 @@ const ListGame: React.FC<ListGameProps> = ({ arrayList, idActive, setOpenAbout, 
 
 
 
-    function handleCLick(e: React.SyntheticEvent<HTMLDivElement>, item:GAME, idx: number) {
+    function handleCLick(e: React.SyntheticEvent<HTMLDivElement>, item: GAME, idx: number) {
 
         if (!(e.target instanceof HTMLDivElement)) {
             return;
         }
-        
-        switch(e.target.dataset.type){
-            case 'folder': 
-                
-                setOpenAbout(true);
-                console.log(item.id)
-                setIsActiveGame((prevState) => ({ ...prevState, id:item.id, description:item.description  }))
-                handleClickScroll(item.id);
+
+        switch (e.target.dataset.type) {
+            case 'folder':
+                if (!openAbout) {
+                    setOpenAbout(true);
+                }
+                setIsActiveGame((prevState) => ({ ...prevState, id: item.id, description: item.description, backgroundTitle: item.backgroundTitle, background: item.background }))
+                handleClickScroll(item.id)
             default:
                 setIdActive(idx)
-              
         }
-
     }
 
 
@@ -58,7 +57,7 @@ const ListGame: React.FC<ListGameProps> = ({ arrayList, idActive, setOpenAbout, 
     return (
         <div className={styles.listGame}>
             {arrayList.map((item, idx) =>
-                <div key={uuidv4()} className={styles.listGameItem} onClick={(e)=>handleCLick(e, item, idx)}>
+                <div key={uuidv4()} className={styles.listGameItem} onClick={(e) => handleCLick(e, item, idx)}>
                     <div className={styles.listGameItemContent} >
                         <h3>{item.name}</h3>
                         <motion.div
@@ -130,81 +129,6 @@ const ListGame: React.FC<ListGameProps> = ({ arrayList, idActive, setOpenAbout, 
 
 
         </div>
-
-        // <div className={styles.listGame}>
-        //     {arrayList.map((item, idx) =>
-        //         <div key={uuidv4()} className={styles.listGameItem} onClick={() => setIdActive(idx)}>
-        //             <div className={styles.listGameItemContent}>
-        //                 <h3>{item.name}</h3>
-        //                 <motion.div data-line={idx}
-        //                     className={clsx({
-        //                         [styles.listGameItemContentImg]: true,
-        //                         [styles.listGameItemContentImgNotActive]: true && idx !== idActive
-        //                     })}
-        //                     initial={{ opacity: 0, scale: 0.5 }}
-        //                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
-        //                     transition={{ duration: 0.7 }}
-
-
-        //                 >
-        //                     <Image
-        //                         quality={100}
-        //                         width={2800}
-        //                         height={900}
-        //                         alt=""
-        //                         src='/images/factions/frame1.png'
-
-        //                     />
-        //                     <div className={clsx({
-        //                         [styles.listGameItemContentImgFolder]: true,
-        //                         [styles.listGameItemContentImgFolderNotActive]: true && idx !== idActive
-        //                     })}
-        //                     onClick={() => {
-        //                         setOpenAbout(true)
-        //                         handleClickScroll(item.id)
-        //                         setIsActiveGame((prevState) => ({ ...prevState, id:item.id, description:item.description  }))
-        //                     }}>
-
-        //                         <Image
-        //                             quality={100}
-        //                             width={2800}
-        //                             height={900}
-        //                             alt=""
-        //                             src={item.folder}
-
-        //                         />
-
-        //                         <div>
-        //                             <p >
-        //                                 More
-        //                             </p>
-        //                         </div>
-
-
-        //                     </div>
-        //                 </motion.div>
-        //             </div>
-        //             <div data-circle={idx} className={styles.listGameItemCircles}>
-        //                 <div className={styles.listGameItemCirclesCircle}>
-        //                     <div className={styles.listGameItemCirclesCircleShadow}></div>
-        //                 </div>
-        //                 <motion.div
-        //                     className={clsx({
-        //                         [styles.listGameItemCirclesCenter]: true,
-        //                         [styles.listGameItemCirclesCenterActive]: true && idx == idActive
-        //                     })}
-        //                     initial={{ opacity: 0, scale: 0.5 }}
-        //                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
-        //                     transition={{ duration: 0.7 }}
-        //                 >
-
-        //                 </motion.div>
-        //             </div>
-        //         </div>
-        //     )}
-
-
-        // </div>
     )
 }
 

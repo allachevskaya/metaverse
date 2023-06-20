@@ -23,7 +23,7 @@ const Factions = () => {
                 'Forge your alliances with the EON Corporation, the rival mafia gangs, or even an utterly corrupt police force - and crush all standing in your way'],
             background: '/images/listGames/BADLANDS.png',
             backgroundTitle: '/images/listGames/BADLANDS_TITLE.png',
-            arrayImages: ['1', '2', '3']
+            arrayImages: ['/images/listGames/plane.png', '/images/listGames/plane.png', '/images/listGames/plane.png', '/images/listGames/plane.png', '/images/listGames/plane.png']
         },
         {
             name: 'Glacial Frontier',
@@ -112,7 +112,8 @@ const Factions = () => {
                                 arrayList={arrayList}
                                 idActive={idActive}
                                 setIsActiveGame={setIsActiveGame}
-                                setOpenAbout={setOpenAbout} />
+                                setOpenAbout={setOpenAbout} 
+                                openAbout= {openAbout}/>
                         </div>
                         <div className={styles.factionsContentContainerNavigation}>
                             <Navigation navigationItems={navigationItems} id={1} />
